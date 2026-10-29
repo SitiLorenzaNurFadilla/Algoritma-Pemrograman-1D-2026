@@ -2,15 +2,15 @@ jumlah = {"A": 0, "B": 0, "C": 0, "D": 0, "E": 0}
 total = 0
 tertinggi = -1
 terendah = 101
- 
-for i in range(10):
+
+for i in range(1, 4):
     nama = input("Nama: ")
-    tugas = float(input("Nilai tugas: "))
+    tugas = float(input("Nilai tugas: ")) #masukkan angka desimal
     uts = float(input("Nilai UTS: "))
     uas = float(input("Nilai UAS: "))
- 
+
     akhir = tugas * 0.3 + uts * 0.3 + uas * 0.4
- 
+
     if akhir >= 85:
         kategori = "A"
     elif akhir >= 75:
@@ -21,20 +21,22 @@ for i in range(10):
         kategori = "D"
     else:
         kategori = "E"
- 
-    jumlah[kategori] += 1
+
+    jumlah[kategori] += 1 
     total += akhir
-    print(nama, tugas, uts, uas, "| Akhir:", round(akhir, 2), "| Kategori:", kategori)
- 
+
+    print(nama, tugas, uts, uas, "| Akhir:", akhir, "| Kategori:", kategori)
+
     if akhir > tertinggi:
         tertinggi = akhir
         nama_tinggi = nama
+
     if akhir < terendah:
         terendah = akhir
         nama_rendah = nama
- 
+
 print("Jumlah per kategori:", jumlah)
-print("Tertinggi:", round(tertinggi, 2), "-", nama_tinggi)
-print("Terendah :", round(terendah, 2), "-", nama_rendah)
-print("Rata-rata:", round(total / 10, 2))
+print("Tertinggi:", tertinggi, "-", nama_tinggi)
+print("Terendah:", terendah, "-", nama_rendah)
+print("Rata-rata:", total / 10)
  
